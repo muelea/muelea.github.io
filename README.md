@@ -235,7 +235,24 @@ For installation details please refer to [INSTALL.md](INSTALL.md).
 
 ## Customizing
 
+Test Locall run:
+```
+bundle exec jekyll serve
+```
+
 For customization details please refer to [CUSTOMIZE.md](CUSTOMIZE.md).
+
+Update News directly in [_includes/news.liquid](_includes/news.liquid).
+
+Update bio and research in [_pages/about.md](_pages/about.md).
+
+Update the icons to contact you in [_includes/social.liquid](_includes/social.liquid).
+
+Update the layout of the first/about page in [_layouts/about_v2.liquid](_layouts/about_v2.liquid).
+
+Add new Bib entry [_bibliography/papers.bib](_bibliography/papers.bib).
+
+Change Bib entry layout [_layouts/bib.liquid](_layouts/bib.liquid).
 
 ## Features
 

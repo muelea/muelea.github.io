@@ -12,7 +12,7 @@
             include figure.liquid
             loading="eager"
             path=entry_path
-            sizes = "200px"
+            sizes = "400px"
             class="preview z-depth-1 rounded"
             zoomable=false
             alt=entry.preview
@@ -71,8 +71,8 @@
         {%- endif -%}
 
         {%- if forloop.length > 1 -%}
-          {% if forloop.first == false %},&nbsp;{% endif %}
-          {%- if forloop.last and author_array_limit == author_array_size %}and&nbsp;{% endif -%}
+          {% if forloop.first == false %} &nbsp;&nbsp;{% endif %}
+          {%- if forloop.last and author_array_limit == author_array_size %}and&nbsp;&nbsp;{% endif -%}
         {% endif %}
         {%- if author_is_self -%}
           <em>
@@ -100,9 +100,9 @@
         {%- endif -%}
         {% assign more_authors_show = '' %}
         {%- for author in entry.author_array offset: author_array_limit -%}
-          {% assign more_authors_show = more_authors_show | append: author.first | append: ' ' | append: author.last %}
+          {% assign more_authors_show = more_authors_show | append: author.first | append: '   ' | append: author.last %}
           {% unless forloop.last %}
-            {% assign more_authors_show = more_authors_show | append: ', ' %}
+            {% assign more_authors_show = more_authors_show | append: '   ' %}
           {% endunless %}
         {%- endfor -%}
         , and
@@ -127,13 +127,18 @@
       {% endif %}
     </div>
 
+    <!-- Equal contribution -->
+    {% if entry.equal %}
+        * equal contribution
+    {% endif %}
+
     <!-- Journal/Book title and date -->
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
     {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
     {% if entry.type == 'article' %}
       {% capture entrytype %}<em>{{entry.journal}}</em>{% endcapture %}
     {% elsif proceedings contains entry.type %}
-      {% capture entrytype %}<em>In {{entry.booktitle}}</em> {% endcapture %}
+      {% capture entrytype %}<em>{{entry.booktitle}}</em> {% endcapture %}
     {% elsif thesis contains entry.type %}
       {% capture entrytype %}<em>{{entry.school}}</em> {% endcapture %}
     {% else %}
@@ -153,6 +158,12 @@
     <div class="periodical">
       {{ entry.note | strip }}
     </div>
+
+    <!-- Equal contribution -->
+    {% if entry.award %}
+        <p></p>
+        <p style="color: red;"> {{ entry.award }} </p>
+    {% endif %}
 
     <!-- Links/Buttons -->
     <div class="links">

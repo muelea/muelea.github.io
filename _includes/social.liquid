@@ -1,5 +1,17 @@
+{% if site.x_username %}
+  <a href="https://twitter.com/{{ site.x_username }}" title="X"><img src="assets/img/icons/twitter.png" alt="twitter" style="width: 6%; margin-right: 20px;"></a>
+{% endif %}
+{% if site.github_username %}
+  <a href="https://github.com/{{ site.github_username }}" title="GitHub"><img src="assets/img/icons/github.png" alt="github"  style="width: 6%; margin-right: 20px;"></a>
+{% endif %}
 {% if site.email %}
-  <a href="mailto:{{ site.email | encode_email }}" title="email"><img src="assets/img/icons/email.png" alt="email"></a>
+  <a href="mailto:{{ site.email | encode_email }}" title="email"><img src="assets/img/icons/email.png" alt="email"  style="width: 6%; margin-right: 20px;"></a>
+{% endif %}
+{% if site.scholar_userid %}
+  <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar"><img src="assets/img/icons/scholar.png" alt="scholar"  style="width: 6%; margin-right: 20px;"></a>
+{% endif %}
+{% if site.cv_url %}
+  <a href="{{ site.cv_url }}" title="CV"><img src="assets/img/icons/cv.png" alt="cv"  style="width: 6%; margin-right: 20px;"></a>
 {% endif %}
 {% if site.telegram_username %}
   <a href="https://telegram.me/{{ site.telegram_username }}" title="telegram"><i class="fa-brands fa-telegram"></i></a>
@@ -9,9 +21,6 @@
 {% endif %}
 {% if site.orcid_id %}
   <a href="https://orcid.org/{{ site.orcid_id }}" title="ORCID"><i class="ai ai-orcid"></i></a>
-{% endif %}
-{% if site.scholar_userid %}
-  <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar"><img src="assets/img/icons/scholar.png" alt="scholar"></a>
 {% endif %}
 {% if site.semanticscholar_id %}
   <a href="https://www.semanticscholar.org/author/{{ site.semanticscholar_id }}" title="Semantic Scholar"><i class="ai ai-semantic-scholar"></i></a>
@@ -31,14 +40,8 @@
 {% if site.scopus_id %}
   <a href="https://www.scopus.com/authid/detail.uri?authorId={{site.scopus_id}}" title="Scopus"><i class="ai ai-scopus"></i></a>
 {% endif %}
-{% if site.github_username %}
-  <a href="https://github.com/{{ site.github_username }}" title="GitHub"><img src="assets/img/icons/github.png" alt="github"></a>
-{% endif %}
 {% if site.linkedin_username %}
   <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-{% endif %}
-{% if site.x_username %}
-  <a href="https://twitter.com/{{ site.x_username }}" title="X"><img src="assets/img/icons/twitter.png" alt="twitter"></a>
 {% endif %}
 {% if site.mastodon_username %}
   <a rel="me" href="https://{{ site.mastodon_username  }}" title="Mastodon"><i class="fa-brands fa-mastodon"></i></a>
@@ -105,9 +108,6 @@
 {% endif %}
 {% if site.zotero_username %}
   <a href="https://www.zotero.org/{{ site.zotero_username }}" title="Zotero"><i class="ai ai-zotero"></i></a>
-{% endif %}
-{% if site.rss_icon %}
-  <a href="{{ site.baseurl }}/feed.xml" title="RSS Feed"><i class="fa-solid fa-square-rss"></i></a>
 {% endif %}
 {% if site.wechat_qr %}
   <a id="WeChatBtn" title="WeChat"><i class="fa-brands fa-weixin"></i></a>
