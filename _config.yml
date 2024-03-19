@@ -220,6 +220,11 @@ exclude:
   - package.json
   - package-lock.json
   - _pages/about_einstein.md
+  - _pages/projects.md
+  - _pages/repositories.md
+  - _pages/cv.md
+  - _pages/teaching.md
+  - _pages/people.md
   - purgecss.config.js
   - README.md
   - readme_preview/
