@@ -38,15 +38,12 @@ layout: default
       </div>
     {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
-
-    <!-- News -->
-    {% if page.news and site.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
+    <!-- Bio -->
+    {% if page.bio %}
+      <div class="more-info">{{ page.bio }}</div>
     {% endif %}
+    
+    <div class="clearfix">{{ content }}</div>
 
     <!-- Social -->
     {% if page.social %}
@@ -55,6 +52,14 @@ layout: default
 
         <div class="contact-note">{{ site.contact_note }}</div>
       </div>
+    {% endif %}
+
+    <!-- News -->
+    {% if page.news and site.announcements.enabled %}
+      <h2>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+      </h2>
+      {% include news.liquid limit=true %}
     {% endif %}
 
     <!-- Selected papers -->
