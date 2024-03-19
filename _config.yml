@@ -70,6 +70,7 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 #GitHub: https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fmuelea&sa=D&sntz=1&usg=AOvVaw3PtnT8Gg7Kr4QJ9_omZ6c0
 #Scholar: https://scholar.google.com/citations?user=J7QDRmwAAAAJ&hl=en&oi=ao
 #X: https://www.google.com/url?q=https%3A%2F%2Ftwitter.com%2FLeaMue27&sa=D&sntz=1&usg=AOvVaw3NZjx_mm9KDktr-GiEAd8M
+# https://muelea.github.io/feed.xml
 
 github_username: muelea # your GitHub user name
 gitlab_username: # your GitLab user name
@@ -161,9 +162,9 @@ disqus_shortname: al-folio # put your disqus shortname
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
+# external_sources:
+#   - name: medium.com
+#     rss_url: https://medium.com/@al-folio/feed
 
 # -----------------------------------------------------------------------------
 # Collections
