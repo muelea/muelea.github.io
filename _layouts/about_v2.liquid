@@ -38,11 +38,6 @@ layout: default
       </div>
     {% endif %}
 
-    <!-- Bio -->
-    {% if page.bio %}
-      <div class="more-info">{{ page.bio }}</div>
-    {% endif %}
-    
     <div class="clearfix">{{ content }}</div>
 
     <!-- Social -->
@@ -60,6 +55,14 @@ layout: default
         <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
       </h2>
       {% include news.liquid limit=true %}
+    {% endif %}
+
+    <!-- Latest posts -->
+    {% if site.latest_posts.enabled %}
+      <h2>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+      </h2>
+      {% include latest_posts.liquid %}
     {% endif %}
 
     <!-- Selected papers -->

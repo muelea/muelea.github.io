@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: about_v2
 title: about
 permalink: /
 subtitle: Perceive human behavior with AI.
