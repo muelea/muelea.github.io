@@ -254,6 +254,10 @@ Add new Bib entry [_bibliography/papers.bib](_bibliography/papers.bib).
 
 Change Bib entry layout [_layouts/bib.liquid](_layouts/bib.liquid).
 
+To add a row for equal contirbution set `equal = {true}` in your bib file.
+
+To add an award note, set `award = {really good paper award}` in your bib file. 
+
 ## Features
 
 ### Light/Dark Mode

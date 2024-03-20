@@ -107,7 +107,7 @@ youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 discord_id: # your discord id (18-digit unique numerical identifier)
 zotero_username: # your zotero username
 wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
-cv_url: https://drive.google.com/file/d/1sirnMosTgnOUPcTkiHovOmUracgK1vBH/view?usp=sharing
+cv_url: assets/pdf/CV_Lea_Mueller.pdf
 
 contact_note: <p>If you are interested, please send an email to</p> <p><b>mueller (at) berkeley.edu</b></p>
 
