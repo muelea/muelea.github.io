@@ -108,7 +108,7 @@ zotero_username: # your zotero username
 wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 cv_url: assets/pdf/CV_Lea_Mueller.pdf
 
-contact_note: <p>If you are interested, please send an email to</p> <p><b>mueller (at) berkeley.edu</b></p>
+contact_note: <p>If you are interested in collaborations, please send an email to <br> <b>mueller (at) berkeley.edu</b></p>
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -289,7 +289,7 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: ["bodyshape", "shapebias"] # these tags will be displayed on the front page of your blog
+display_tags: ["bodyshape", "shapebias", "touch"] # these tags will be displayed on the front page of your blog
 display_categories: [] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
