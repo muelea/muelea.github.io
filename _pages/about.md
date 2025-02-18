@@ -2,7 +2,7 @@
 layout: about_v2
 title: about
 permalink: /
-subtitle: Perceive human behavior with AI
+subtitle: AI | Computer Vision | 3D | Humans
 
 profile:
   align: left
