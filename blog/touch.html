@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Touch in human mesh reconstruction — Lea Wilken</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .post-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid #efefef; margin-bottom: 2rem; }
+    .post-header h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .post-meta { color: var(--grey); font-size: 0.9rem; }
+    .post-hero { width: 100%; max-height: 360px; object-fit: cover; border-radius: 6px; margin-bottom: 2rem; }
+    .post-body p { margin-bottom: 1.1rem; text-align: justify; }
+    .post-body sup { font-size: 0.7rem; color: var(--blue); }
+    .references { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #efefef; }
+    .references h2 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .references ol { padding-left: 1.5rem; font-size: 0.82rem; color: #555; line-height: 1.6; }
+    .references li { margin-bottom: 0.4rem; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="../index.html#about">about</a>
+      <a href="../index.html#news">news</a>
+      <a href="../index.html#publications">publications</a>
+      <a href="../index.html#blog" class="active">blog</a>
+      <a href="../assets/pdf/CV_Lea_Mueller.pdf" target="_blank">cv</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="post-header">
+      <h1>Touch in human mesh reconstruction</h1>
+      <div class="post-meta">March 20, 2024</div>
+    </div>
+
+    <img class="post-hero" src="../assets/img/blog/pexels-tiana-951572.jpg" alt="Touch" />
+
+    <div class="post-body">
+      <p>
+        The human skin is designed to experience touch — the ability to perceive a stimulus that comes into contact
+        with the body surface. The sense of touch is crucial because it allows us to experience physical sensations,
+        create and deepen social relationships, and establish a connection with the world around us. The field of
+        computer vision should be able to model and reconstruct the full human body surface and capture its complex
+        interactions with ourselves, other humans, and the environment. Understanding contact through computer vision
+        will enable advancements in virtual and augmented reality and impact other fields like robotics and behavioral
+        science. Interestingly, many works in our field investigate interaction between humans and scenes, while
+        research on self- and human-human contact remains relatively scarce in comparison.
+      </p>
+
+      <p>
+        Human beings engage in self-touch or self-contact multiple times a day, indicating its behavioral significance
+        and prompting extensive research in behavioral- and neuroscience. For instance, studies have shown that facial
+        self-touch is a recognized indicator of stress in adults.<sup>[1]</sup> Infants frequently and spontaneously
+        touch their own body, which serves as a way of exploration, facilitating the development of body
+        awareness<sup>[2]</sup> and even fetuses show increased self-contact when maternal stress is
+        present.<sup>[3]</sup> The patterns of self-touch are manifold as they vary in speed, trajectory, or movement
+        duration<sup>[4,5]</sup> and their exact function is still unknown. Some work argues that self-touch mainly
+        serves for self-stabilization and self-calming<sup>[5,6]</sup> or as a mechanism for down-regulation in high
+        arousal states.<sup>[6]</sup> Self-touch is also associated with emotional processes that interfere with
+        working memory performance.<sup>[7]</sup> In particular, suppressing self-touch among individuals who
+        frequently touch their own body leads to significantly worse memory performance in haptic working memory
+        tasks.<sup>[8]</sup> Other research indicates a connection between different patterns of self-touch and
+        neuropsychological state<sup>[4,9]</sup> and mental arousal.<sup>[10,11,12]</sup> In dialogues, self-touching
+        colloquists are rated significantly more honest, outgoing, likable, and positively w.r.t. the working
+        relationship compared to their non self-touching equivalent.<sup>[13]</sup> This indicates a relevance of
+        self-touch not only for self-regulation but also as an outwardly effective mechanism.
+      </p>
+
+      <p>
+        The relevance of interpersonal touch or human-human contact has also been investigated extensively in
+        behavioral science, in particular the role of social touch.<sup>[14]</sup> In fact, the body of research on
+        social touch is extensive, and this paragraph can only offer a brief glimpse into interpersonal touch to
+        highlight its relevance and functionality in human behavior. Beginning from early childhood, physical contact
+        between parent and child establishes bonds and is associated with immediate stress reduction,<sup>[15,16]</sup>
+        enhanced object exploration,<sup>[17]</sup> and long-term effects on behaviour.<sup>[18,19,20]</sup> Early
+        vocabulary items may consist of words often linked with caregiver touches.<sup>[21]</sup> This is surprising
+        because there is no reason why words like 'feet' should be spoken more often than 'diaper'. In older children,
+        the avoidance of interpersonal touch can be a predictor of autism spectrum disorder.<sup>[22,23]</sup> Social
+        touch also has many effects in adulthood. Crusco and Wetzel<sup>[24]</sup> show that a slight touch increased
+        tips in restaurants, i.e. touch causes a more friendly behaviour towards the touch-giver. This effect, also
+        known as the Midas touch, was replicated multiple times in subsequent research studies. For example, the
+        exposure to social touch increases a bus driver's willingness to transport customers without having enough
+        money for the ticket.<sup>[25]</sup> Recent work found that, in virtual reality, agents with touch are
+        perceived as more human-like.<sup>[26]</sup> This confirms the importance of touch not only in real life but
+        also in the virtual world.
+      </p>
+
+      <p>
+        Despite the great relevance of self- and human-human contact to learn about human behavior and states, most
+        research on this topic is constrained by small group sizes because contact usually requires manual annotation
+        as only a few rudimentary detection and reconstruction methods exist. This prevents understanding the importance
+        and functionality of touch on human behavior at scale. The field of computer vision could advance the
+        understanding of human social interactions by providing methods for 3D mesh reconstruction with accurate self-
+        and mutual contact from images and video.
+      </p>
+
+      <p>
+        Unfortunately, self- and human-human contact has rarely been studied. One reason is that contact is rare in
+        most human scan and motion capture (Mo. Cap.) datasets, because contact naturally leads to occlusion, which
+        hampers data capturing. In body scan datasets, most poses avoid self-contact and in Mo. Cap. systems usually
+        only a single person is captured. The implications for our field are evident: recent 3D motion generation
+        methods can perfectly synthesize a single static person or human motion, but cannot generate two people shaking
+        hands. Another reason why reconstructing accurate contact is neglected in 3D human pose and shape estimation
+        is that most methods predominantly rely on 2D joint locations for supervision. However, 2D joints are not
+        sufficient to accurately estimate the body surface, because one set of 2D joints can be explained by multiple
+        body shapes and also by multiple poses when no ground-truth camera information is available. Priors, i.e.
+        mathematical functions or models that incorporate prior knowledge about human pose and shape, are usually
+        learned from scan and Mo. Cap. datasets that hardly contain contact poses. This leads to 3D mesh estimates
+        that, when projected onto the image, satisfy reprojection constraints and may perfectly overlay with the image
+        evidence. A rotation to the side, however, reveals that the estimated poses are not correct.
+      </p>
+
+      <p>
+        Being able to reconstruct and generate meshes with self- and mutual contact will facilitate the creation of
+        avatars aligned with human behaviour which will let them appear more human-like, natural, and realistic.
+      </p>
+
+      <div class="references">
+        <h2>References</h2>
+        <ol>
+          <li>Densing et al. (2018). Effect of self-touch on stress indicators.</li>
+          <li>Khoury et al. (2022). Self-touch and body awareness in infants.</li>
+          <li>Reissland et al. (2015). Laterality of fetal self-contact under maternal stress.</li>
+          <li>Barroso (1980). Patterns of self-touch behavior.</li>
+          <li>Lausberg &amp; Sloetjes (2013). Understanding self-touch and self-stabilization.</li>
+          <li>Scherer (1979). Nonverbal indicators and self-calming.</li>
+          <li>Grunwald et al. (2014). EEG correlates of self-touch and working memory.</li>
+          <li>Spille et al. (2022). Suppression of self-touch and haptic memory performance.</li>
+          <li>Thompson &amp; Cousins (2010). Grooming behavior and neuropsychological state.</li>
+          <li>Kryger (2010). Self-touch and mental arousal.</li>
+          <li>Lausberg (2011). Gestural self-touch in dialogue.</li>
+          <li>Ulrich (1985). Video analysis of self-touch patterns.</li>
+          <li>Harrigan et al. (1987). Self-touching and interpersonal perception.</li>
+          <li>Saarinen et al. (2021). Social touch and its behavioral effects.</li>
+          <li>Stack &amp; Muir (1990). Tactile contact and infant stress reduction.</li>
+          <li>Feldman (2010). Touch and parent-child bonding.</li>
+          <li>Tanaka et al. (2021). Social touch and object exploration in infants.</li>
+          <li>Bai et al. (2016). Long-term effects of early touch on children's behavior.</li>
+          <li>Pickles et al. (2017). Prenatal touch and behavioral outcomes.</li>
+          <li>Cascio et al. (2019). Social touch across development.</li>
+          <li>Seidl et al. (2015). Body-related vocabulary and caregiver touch.</li>
+          <li>Baranek (1999). Autism and avoidance of interpersonal touch.</li>
+          <li>Mammen et al. (2015). Infant touch avoidance as predictor of ASD.</li>
+          <li>Crusco &amp; Wetzel (1984). The Midas touch: effects of touch on tipping.</li>
+          <li>Guéguen (2003). Social touch and prosocial behavior in bus drivers.</li>
+          <li>Hoppe et al. (2020). Touch in VR agents and perceived human-likeness.</li>
+        </ol>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">&copy; 2026 Lea Wilken</div>
+  </footer>
+
+</body>
+</html>
